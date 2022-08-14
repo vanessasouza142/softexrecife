@@ -1,0 +1,25 @@
+function calculadora(num1, num2, o){
+
+    let numero1 = num1
+    let numero2 = num2
+    let operador = o
+
+if (operador == "+"){
+    let resultado = numero1 + numero2
+    return resultado
+} else if (operador == "-"){
+    let resultado = numero1 - numero2
+    return resultado
+} else if (operador == "*"){
+    let resultado = numero1 * numero2
+    return resultado
+}else if (operador == "/"){
+    let resultado = numero1 / numero2
+    let resultadoResto = numero1 % numero2
+        if (resultadoResto != 0){
+            return "O resultado é:" + resultado + "O resto é:" + resultadoResto
+        }else
+            return "O resultado é:" + resultado
+}
+}
+console.log(calculadora(9,8,"/"))
