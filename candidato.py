@@ -8,49 +8,51 @@ O código deve perguntar se deseja finalizar a votação depois do voto. Caso o 
 Quando a votação for finalizada, o código deverá mostrar o vencedor, aquele com o maior número de votos e, também, a quantidade de votos de cada candidato, os brancos e nulos 
 */
 
-from codecs import BufferedIncrementalEncoder
+from enum import Enum
 
-def votacao(candidato):  # fução para votação com a variavel candidato como argumento
-    global candidato_X, candidato_Y, candidato_Z, branco
- 
-    if candidato.isalpha():  # checa se candidato contem apenas letras
-        if candidato == 'Fim' or candidato == 'fim' or candidato == 'FIM':
-            print('FIM DA VOTAÇÃO')
-            print_resultados()
+class candidato(Enum):
+  X = 889
+  Y = 847
+  Z = 515
 
-    elif candidato.isnumeric():  # checa se candidato e um caracter numerico
-        if candidato == '1' or candidato == '2' or candidato == '3' or candidato == '4':
-            if candidato == '1':
-                candidato_Y += 1
-            elif candidato == '2':
-                candidato_X += 1
-            elif candidato == '3':
-                candidato_Z += 1
-            elif candidato == '4':
-                branco += 1
-        else:  # se o valor digitado nao e valido, há entrada de novo candidato e a funcao repete
-            candidato= str(input('Digite um numero valido para o candidato: '))
-            votacao(candidato)
+votos_x = 0
+votos_y = 0
+votos_z = 0
+votos_brancos_nulos = 0
 
+while (True):
+  try:
+    print()
+    voto = int(input("Qual o seu voto? "))
+  except:
+    print("Voto inválido. Vote novamente.")
+    continue
+  
+  if (voto == candidato.X.value):
+    votos_x = votos_x + 1
+  elif (voto == candidato.Y.value):
+    votos_y = votos_y + 1
+  elif (voto == candidato.Z.value):
+    votos_z = votos_z + 1
+  else:
+    votos_brancos_nulos = votos_brancos_nulos + 1
 
-def print_resultados():  # printa resultados e encerra programa
-    global candidato_X, candidato_Y, candidato_Z, branco
+  resposta = input("Deseja finalizar a votação(s ou n)? ")
+  if (resposta == "s") or (resposta == "S"):
+    break
 
-    print('QUANTIDADE DE VOTOS:\n')
-    print('CANDIDATO Y - TOTAL DE ' + str(candidato_Y))
-    print('CANDIDATO X - TOTAL DE ' + str(candidato_X))
-    print('CANDIDATO Z - TOTAL DE ' + str(candidato_Z))
-    print('VOTOS NULOS - TOTAL DE ' + str(branco))
+maior_votacao = max(votos_x, votos_y, votos_z)
 
-    exit()  # encerra prog
+if (maior_votacao == votos_x):
+  vencedor = candidato.X.name
+elif (maior_votacao == votos_y):
+  vencedor = candidato.Y.name
+else:
+  vencedor = candidato.Z.name
 
-
-#main 
-candidato_X = 0
-candidato_Y = 0
-candidato_Z = 0
-branco = 0
-
-while True:  # laço ocorre indefinidamente ate que ocorra o 'Fim'
-    candidato = str(input('ELEIÇÃO ESPECIAL\nDigite o numero do seu candidato: '))
-    votacao(candidato)
+print()
+print("Vencedor: " + vencedor)
+print("Candidato X: " + str(votos_x) + " votos")
+print("Candidato Y: " + str(votos_y) + " votos")
+print("Candidato Z: " + str(votos_z) + " votos")
+print("Brancos e nulos: " + str(votos_brancos_nulos) + " votos")
