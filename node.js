@@ -2,7 +2,7 @@
 Após fazer essa migração, coloque seu código no arquivo "index.js", teste e tire um print.
 */
 
-/* CODIGO */
+/* CODIGO EXECUTADO NO VS CODE */
 
 function nota (n1, n2, n3){
 
