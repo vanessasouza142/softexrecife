@@ -15,6 +15,26 @@ function nota (n1, n2, n3){
 
 console.log(nota(7,8,9))
 
-/* PRINT DO CODIGO EXECUTADO NO NODE */
+/* CODIGO EXECUTADO NO NODE */
 
+About to write to C:\Users\Vanessa Souza\Desktop\Softex\Módulo 2 - JavaScript\0 - codigos_javascript\projeto node.js\package.json:
+
+{
+  "name": "projeto-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) yes
+
+C:\Users\Vanessa Souza\Desktop\Softex\Módulo 2 - JavaScript\0 - codigos_javascript\projeto node.js>node index.js
+Você está: Aprovado
+undefined
 
