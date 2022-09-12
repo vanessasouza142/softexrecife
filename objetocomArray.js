@@ -9,8 +9,8 @@ Desenvolva um código e crie nele:
 
 // Objeto e funcao For In
 let aluno = {
-    nome: "Juliana"
-    idade: 15
+    nome: "Juliana",
+    idade: 15,
     serie: 9
 }
 
@@ -20,7 +20,7 @@ function listaPropriedades(aluno) {
     console.log(`${propriedade}: ${aluno[propriedade]}`)
     }
 }
-
+console.log(listaPropriedades(aluno))
 
 
 // Array e funcao For of
@@ -31,3 +31,5 @@ function listaElementosArray(cores){
         console.log(`${elemento}`) 
     }
 }
+console.log(listaElementosArray(cores))
+
