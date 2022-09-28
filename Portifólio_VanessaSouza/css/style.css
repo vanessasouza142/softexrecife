@@ -1,0 +1,38 @@
+.grid-container {
+    display:grid;
+    grid-template-columns: 10px 60px;
+    background-color: rgb(177, 223, 207);
+    }
+
+.grid-item2 {
+    background-color: rgb(76, 111, 124);
+    position:absolute;
+    right:0px;
+    margin-top: 20px;
+    z-index: 2;
+    height: 200px;
+    width: 362px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.grid-item3 {
+    background-color: rgb(37, 83, 62);
+    height: 1000px;
+    width: 250px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.titulo {
+    color:rgb(241, 247, 243);
+    background-color: rgb(103, 152, 172);
+    margin: 20px 0px;
+    padding: 20px auto;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+body {
+    background-color: rgb(210, 241, 231);
+}
