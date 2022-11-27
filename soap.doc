@@ -1,1 +1,12 @@
+Web Service: estrutura de comunicação entre cliente e banco de dados.
 
+Estrutura de um Web Service:
+
+    ------- Requisição ------>
+Cliente <-->  WEB SERVICE <--> Banco de Dados/Servidor
+    <------- Resposta -------                     
+
+
+SOAP é um dos protocolo de transferência de mensagens utilizados em formato XML para uso em ambientes distribuídos. O padrão SOAP funciona como um tipo de framework que 
+permite a interoperabilidade entre diversas plataformas com mensagens personalizadas.
+Aplicando este padrão em Web Services, geralmente usa-se o WSDL para descrever a estrutura das mensagens SOAP e as ações possíveis em um endpoint.
