@@ -10,3 +10,40 @@ Cliente <-->  WEB SERVICE <--> Banco de Dados/Servidor
 SOAP é um dos protocolo de transferência de mensagens utilizados em formato XML para uso em ambientes distribuídos. O padrão SOAP funciona como um tipo de framework que 
 permite a interoperabilidade entre diversas plataformas com mensagens personalizadas.
 Aplicando este padrão em Web Services, geralmente usa-se o WSDL para descrever a estrutura das mensagens SOAP e as ações possíveis em um endpoint.
+
+Código:
+
+Request 
+Post /consultaCliente HTTP/1.1
+Host: www.softexpe.com
+Content -Type: application/soap+xml; charset=utf-8
+Contente -length: nnn
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http//schemas.xmlsoap.org/soap/envelope/">
+<soap:Body xmlns:m="http://www.softexpe.com/consultaCliente">
+    <m:consultaClienteRequest:
+      <m:cpf>09514066570</m:cpf>
+    </m:consultaClienteRequest>
+</soap:Body>
+</soap:Envelope>
+
+
+Response 
+HTTP/1.1 200 OK
+Content -Type: application/soap+xml; charset=utf-8
+Contente -Length; nnn
+<?xml version="1.0"?>
+<soap:Body xmlns:m="http://www.softexpe.com/consultaCliente">
+	<m:consultaClienteResponse>
+ 		<m:nome>Vanessa Souza</m:nome>
+		<m:endereço>Av. Norte, 1246 </m:endereço>
+		<m:telefone> 81 998706555</m:telefone>
+	</m:ConsultaClienteResponse:
+</soap:Body>
+</soap:Envelope>
+
+Na requisição, será solicitado uma informação ao cliente.
+- Ao receber essa requisição, a aplicação web procurará os dados do cliente através da informação fornecida. 
+
+Na resposta, a aplicação web vai retornar com os dados do cliente através da informação fornecida. 
